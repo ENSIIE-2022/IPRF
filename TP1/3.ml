@@ -1,6 +1,13 @@
-let scan_string () = Scanf.scanf " %s" (fun x -> x);;
+let pi = 4. *. atan 1. ;;
+(* 3.1 *)
+let cube n =
+  n ** 3. ;;
+(* 3.2 *)
+let volume r =
+  (cube r) *. pi *. 4. /. 3. ;;
+(* 3.3 *)
+let surface_et_volume r = 
+  let surface = 4. *. pi *. r in
+  (surface, volume r);;
 
-Printf.printf "Quel est votre nom ?\n";;
-flush(stdout);;
-let answer = scan_string();;
-Printf.printf "Bienvenue %s !\n" answer;;
+  cube 3.
