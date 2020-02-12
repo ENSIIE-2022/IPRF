@@ -17,6 +17,7 @@ let rec pow2 x n =
 ;;
 
 (*
+pow1 donne un stack overflow, pow2 donne une résultat incorrect à partir de 13 car on dépasse le max_int de OCAML
 Printf.printf "%d" (pow 2 2)
 Printf.printf "%d" (pow2 2 2)
 *)
