@@ -49,8 +49,9 @@ let rec monnaie somme =
   else if somme >= 10 then C10::(monnaie (somme-10))
   else if somme >= 5 then C5::(monnaie (somme-5))
   else if somme >= 2 then C2::(monnaie (somme-2))
-  else somme >= 1 then C1::(monnaie (somme-1))
+  else C1::(monnaie (somme-1))
 ;;
+
 
 Printf.printf "%b\n" (est_billet E10);;
 Printf.printf "%d\n" (montant [E10;E20;C1]);;

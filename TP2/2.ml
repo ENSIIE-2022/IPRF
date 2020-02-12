@@ -19,5 +19,3 @@ let compare_nombre a b =
   | Int ia, Real fb -> (float_of_int ia) < fb
 ;;
 
-Printf.printf "%f\n" (division 10 5);;
-Printf.printf "%d\n" (compare_nombre 10 5);;
