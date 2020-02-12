@@ -11,7 +11,7 @@ let rec pow2 x n =
   if n = 0 then
     1
   else if n mod 2 = 0 then
-    pow (x*x) (n/2)
+    pow2 (x*x) (n/2)
   else
     x *pow2 (x*x) (n/2)
 ;;
