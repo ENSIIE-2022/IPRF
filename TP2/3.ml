@@ -1,7 +1,7 @@
 (* 3.1 Écrire une fonction récursive produit qui, sur la donnée d’une liste d’entiers, renvoie le produit de tous les éléments de cette liste.*)
 let rec produit l =
   match l with
-  | [] -> 0
+  | [] -> 1
   | a::[] -> a
   | t::q -> t * produit q
 ;;
