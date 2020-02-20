@@ -18,4 +18,3 @@ let compare_nombre a b =
   | Real fa, Int ib -> fa < (float_of_int ib)
   | Int ia, Real fb -> (float_of_int ia) < fb
 ;;
-

@@ -6,12 +6,17 @@ let rec produit l =
   | t::q -> t * produit q
 ;;
 
+Printf.printf "%d\n" (produit [1;2;3;4;5]);;
+
 (* 3.2 Écrire une fonction récursive carre_liste qui, sur la donnée d’une liste d’entiers l, renvoie la liste des carrés des éléments de l.*)
 let rec carre_liste l =
   match l with
   | [] -> []
   | t::h -> (t * t)::(carre_liste h)
 ;;
+
+let () = List.iter (printf "%d ") (carre_list [1;2;3;4]);;
+
 
 (* 3.3 Écrire une fonction récursive min_max qui, sur la donnée d’une liste d’entiers, renvoie le couple formé du plus petit et du plus grand entier dans cette liste.*)
 let rec min_max l =
