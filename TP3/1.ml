@@ -35,3 +35,22 @@ let rec tree_map f t =
   | Empty -> Empty
   | Node (v, fg, fd) -> Node (f v, tree_map f fg, tree_map f fd)
 ;;
+
+(* ('a -> 'b -> 'a) -> 'a -> 'b tree -> 'a *)
+let rec tree_fold_infixe f acc t =
+  match t with
+  | Empty -> acc
+  | Node (v, fg, fd) ->
+    let accg = tree_fold_infixe f acc fg in
+      let accgv = f accg v in
+        tree_fold_infixe f accgv fd
+;;
+
+let tree_min_max = tree_fold_infixe
+  (fun (min, max) -> fun e ->
+    if (e < min && e > max) then (e, e)
+    else if e < min then (e, max)
+    else if e > max then (min, e)
+    else (min, max))
+  (max_int, min_int)
+;;
