@@ -1,7 +1,7 @@
 (* 3.1 Écrire une fonction récursive produit qui, sur la donnée d’une liste d’entiers, renvoie le produit de tous les éléments de cette liste.*)
 let rec produit l =
   match l with
-  | [] -> 0
+  | [] -> 1
   | a::[] -> a
   | t::q -> t * produit q
 ;;
@@ -61,3 +61,15 @@ let rec nub l =
 ;;
 
 (* 3.7 Refaire les questions précédentes sans utiliser de fonctions récursives. Utiliser pour cela les fonctions du module List, notamment List.map et List.fold_left/List.fold_right. *)
+
+let produit_bis = List.fold_left ( * ) 1 ;;
+
+let carre_liste_bis = List.map ( fun x -> x*x) ;;
+
+let min_max_bis = List.fold_left (fun (a,b) -> fun e -> ( min a e , max b e) ) (max_int , min_int) ;;
+
+let recherche_bis e l = List.fold_left (fun c -> fun i -> c || i=e) false l ;;
+
+let nb_occ_bis e l = List.fold_left ( fun c -> fun i -> if e=i then c+1 else c) 0 l ;;
+
+let nub_bis = List.fold_left ( fun c -> fun e -> if recherche_bis e c then c else e::c) [] ;;
