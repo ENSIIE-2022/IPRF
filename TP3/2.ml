@@ -31,6 +31,7 @@ let rec eval expr env =
 
 let e2 = Plus (Mult (Minus (Const (1), Const(1)), Var ("y")), Mult (Plus (Const (1), Const (1)), Var ("x")));;
 
+(* Oublie du cas avec le plus et le 0 ? *)
 let rec simpl expr =
   match expr with
   |Plus (e1, e2) ->
@@ -49,5 +50,6 @@ let rec simpl expr =
       | (Const (0), _) |(_, Const (0)) -> Const (0)
       | (_, _) -> Mult (es1, es2))
   |Neg (e) -> Neg (simpl e)
-  |_ -> Const (0)
+  |Const (c) -> Const (c)
+  |Var (s) -> Var (s)
 ;;
