@@ -68,6 +68,24 @@ double average (double a, double b) {
   double sum = a + b;
   return sum / 2;
 }
-  
+
+# Fonctions imbriquées
+let read_whole_channel chan =
+    let buf = Buffer.create 4096 in
+    let rec loop () =
+      let newline = input_line chan in
+      Buffer.add_string buf newline;
+      Buffer.add_char buf '\n';
+      loop ()
+    in
+    try
+      loop ()
+    with
+      End_of_file -> Buffer.contents buf;;
+val read_whole_channel : in_channel -> string = <fun>
+
 # Les trucs chiants :
 - Un type et une fonction peuvent avoir le même nom
+
+# TODO
+let... in
