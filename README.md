@@ -6,12 +6,12 @@ http://web4.ensiie.fr/~christophe.mouilleron/Teaching/IPRF/
 # Les notes de Lucas :
 
 # Appel de fonction :
-repeated ("hello", 3)  /* c'est du code C */
-repeated "hello" 3  (* c'est du code OCaml *)
+repeated ("hello", 3) => c'est du code C
+repeated "hello" 3 => c'est du code OCaml
 
 # Arguments :
-f 5 (g "hello") 3    (* f a 3 arguments, g a un argument *) => A noter que (g "hello") est donc un couple
-f (g 3 4)            (* f a un argument, g a 2 arguments *)
+f 5 (g "hello") 3 => f a 3 arguments, g a un argument => A noter que (g "hello") est donc un couple
+f (g 3 4)         => f a un argument, g a 2 arguments
 
 # Définition de fonction :
 OCAML :
@@ -34,7 +34,7 @@ string  |Une chaîne de caractères à 8 bits
 unit    |Valeur unique notée ()
 
 # Convertion de types :
-float_of_int i +. f;; (* Sachant que i est un int et f est un float *)
+float_of_int i +. f;; => Sachant que i est un int et f est un float
 int_of_float, char_of_int, int_of_char, string_of_int, etc...
 
 # Fonctions récursives :
